@@ -2,7 +2,7 @@ package transport;
 
 import java.time.LocalDate;
 
-public class Car {
+public class Car extends Transport {
     public static class Key {
         private final boolean remoteStart;
         private final boolean keylessEntry;
@@ -26,7 +26,7 @@ public class Car {
 
     @Override
     public String toString() {
-        return brand + model + year + " года выпуска, сборка в " + country + color + " цвета, объем двигателя — " +
+        return getBrand() + getModel() + getYear() + " года выпуска, сборка в " + getCountry() + getColor() + " цвета, объем двигателя — " +
                 engineVolume + " л. " + " Коробка передач " + transmission + " Тип кузова " + typeBody +
                 " Регистрационный номер " + registrationNumber + " Количество мест " + numberOfSeats + " резина " +
                 rubber + (getKey().isRemoteStart() ? " доступ без ключа " : " доступ с ключом ") + "," + (getKey().isKeylessEntry() ?
@@ -41,26 +41,16 @@ public class Car {
             System.out.println("Пора ездить на летней резине");
     }
 
-    private final String brand;
-    private final String model;
+
     private double engineVolume;
-    private String color;
-    private final int year;
-    private final String country;
     private String transmission;
     private final String typeBody;
     private String registrationNumber;
     private final int numberOfSeats;
-    public String rubber;
+    private String rubber;
     private final Key key;
 
-    public String getBrand() {
-        return brand;
-    }
 
-    public String getModel() {
-        return model;
-    }
 
     public double getEngineVolume() {
         return engineVolume;
@@ -68,22 +58,6 @@ public class Car {
 
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
     }
 
     public String getTransmission() {
@@ -122,35 +96,22 @@ public class Car {
         return key;
     }
 
-    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String typeBody, String registrationNumber, int numberOfSeats, String rubber, Key key) {
-        if (brand.isEmpty() || brand == null || brand.isBlank()) {
-            this.brand = "default";
-        } else
-            this.brand = brand;
-        if (model.isEmpty() || model == null || model.isBlank()) {
-            this.model = " ";
-        } else
-            this.model = model;
+    public Car(String brand, String model, double engineVolume, String color, int year, String country, String transmission, String typeBody, String registrationNumber, int numberOfSeats, String rubber, Key key, int maxSpeed) {
+        super(brand, model, year, country, color, maxSpeed);
         if (engineVolume <= 0) {
             this.engineVolume = 1.5;
         } else
             this.engineVolume = engineVolume;
-        if (color.isEmpty() || color == null || color.isBlank()) {
-            this.color = "Белый";
-        } else
-            this.color = color;
-        if (year <= 0) {
-            this.year = 2000;
-        } else
-            this.year = year;
-        if (country.isEmpty() || country == null || country.isBlank()) {
-            this.country = "default";
-        } else
-            this.country = country;
         this.transmission = transmission;
+        if (typeBody == null ) {
+            this.typeBody = "Седан";
+        }else
         this.typeBody = typeBody;
         this.registrationNumber = registrationNumber;
         this.numberOfSeats = numberOfSeats;
+        if (rubber.isEmpty() || rubber == null || rubber.isBlank()){
+            this.rubber = "default";
+        }else
         this.rubber = rubber;
         this.key = new Key(key.remoteStart, key.keylessEntry);
 
