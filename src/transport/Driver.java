@@ -2,7 +2,7 @@ package transport;
 
 import java.util.Objects;
 
-public abstract class Driver  {
+public abstract class Driver<T extends Transport & Competing>  {
 
     private String fullName;
     private boolean drivingLicenses;
@@ -58,7 +58,7 @@ public abstract class Driver  {
         return Objects.hash(fullName, drivingLicenses, experience);
     }
 
-    public abstract void startGo ();
+    public abstract void startGo (T Transport);
         public abstract void stop ();
         public abstract void fillTheCar ();
 

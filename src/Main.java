@@ -17,12 +17,12 @@ public class Main {
         Truck vaz = new Truck("Vaz", "У2", 9.7);
         Truck reno = new Truck("Reno", "2XL", 10.6);
         Truck lexus = new Truck("Lexus", "DVD10", 12.0);
-        DriverB<Car> alex = new DriverB<>("Alex", true, 10);
-        alex.startGo1(audi);
-        DriverC<Bus> ivan = new DriverC<>("ivan", true, 8);
-        DriverD<Truck> vova = new DriverD<>("Vova", true, 5);
-        vova.startGo1(vaz);
-        ivan.startGo1(kamaz);
+        Driver<Car> alex = new DriverB("Alex", true, 10);
+        alex.startGo(audi);
+        Driver<Bus> ivan = new DriverC("ivan", true, 8);
+        Driver<Truck> vova = new DriverD("Vova", true, 5);
+        vova.startGo(vaz);
+        ivan.startGo(kamaz);
         System.out.println(lada);
         lada.startDrive();
         lada.pitStop();

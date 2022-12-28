@@ -1,10 +1,12 @@
 package transport;
 
-public class DriverB<T extends Transport & Competing> extends Driver {
+public class DriverB extends Driver<Car> {
 
     public DriverB(String fullName, boolean drivingLicenses, int experience) {
         super(fullName, drivingLicenses, experience);
     }
+
+
 
     @Override
     public String toString() {
@@ -20,12 +22,10 @@ public class DriverB<T extends Transport & Competing> extends Driver {
     public int hashCode() {
         return super.hashCode();
     }
-public void startGo1(T Transport){
-    System.out.println("Водитель " + getFullName() + " категории В начал движение и будет участвовать в заезде");
-}
+
     @Override
-        public void startGo() {
-            System.out.println("Водитель категории B начинает движение");
+        public void startGo(Car transport) {
+            System.out.println("Водитель "+ getFullName() + " категории В начал движение и будет участвовать в заезде");
         }
 
         @Override
