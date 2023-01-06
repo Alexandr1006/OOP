@@ -2,6 +2,21 @@ package transport;
 
 public class Bus extends Transport implements Competing {
 
+    private Capacity capacity;
+
+    public Bus(String brand, String model, double engineVolume, Capacity capacity) {
+        super(brand, model, engineVolume);
+        this.capacity = capacity;
+    }
+
+    public Capacity getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Capacity capacity) {
+        this.capacity = capacity;
+    }
+
     public Bus(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }
@@ -21,7 +36,9 @@ public class Bus extends Transport implements Competing {
     public void pitStop() {
         System.out.println("Автобусу " + getBrand() + " " + getModel() + " пора заехать на Пит стоп");
     }
-
+    public void printType(){
+        System.out.println("вместимость " + capacity);
+    }
     @Override
     public void bestLapTime() {
         System.out.println("Лучшее время круга автобус: " + getBrand() + " " + getModel());

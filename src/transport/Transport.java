@@ -35,6 +35,7 @@ public abstract class  Transport {
     }
     public abstract void startDrive();
     public abstract void stopDrive();
+    public abstract void  printType();
 
     @Override
     public boolean equals(Object o) {
