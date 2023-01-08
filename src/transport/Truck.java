@@ -4,6 +4,7 @@ public class Truck extends Transport implements Competing {
 
     private Carrying carrying;
 
+
     public Truck(String brand, String model, double engineVolume, Carrying carrying) {
         super(brand, model, engineVolume);
         this.carrying = carrying;
@@ -15,10 +16,6 @@ public class Truck extends Transport implements Competing {
 
     public void setCarrying(Carrying carrying) {
         this.carrying = carrying;
-    }
-
-    public Truck(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
     }
 
     @Override
@@ -49,5 +46,8 @@ public class Truck extends Transport implements Competing {
         System.out.println("Максимальная скорость грузовика: ");
     }
 
+    @Override
+    public void diagnostics() {
 
+    }
 }

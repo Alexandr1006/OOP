@@ -2,8 +2,9 @@ package transport;
 
 public class DriverC extends Driver<Bus> {
 
-    public DriverC(String fullName, boolean drivingLicenses, int experience) {
-        super(fullName, drivingLicenses, experience);
+
+    public DriverC(String fullName, boolean drivingLicenses, int experience, String categoryOfRights) {
+        super(fullName, drivingLicenses, experience, categoryOfRights);
     }
 
     @Override
@@ -29,7 +30,7 @@ public class DriverC extends Driver<Bus> {
 
     @Override
     public void startGo(Bus transport) {
-        System.out.println("Водитель "+ getFullName() + " категории C начал движение и будет участвовать в заезде");
+        System.out.println("Водитель "+ getFullName() + " категории" + getCategoryOfRights() + "начал движение и будет участвовать в заезде");
     }
 
     @Override

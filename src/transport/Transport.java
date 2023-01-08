@@ -2,7 +2,7 @@ package transport;
 
 import java.util.Objects;
 
-public abstract class  Transport {
+public abstract class Transport {
 
     private String brand;
 
@@ -12,11 +12,15 @@ public abstract class  Transport {
 
 
 
-    public Transport(String brand, String model, double engineVolume ) {
+
+    public Transport(String brand, String model, double engineVolume) {
         this.brand = brand;
         this.model = model;
         this.engineVolume = engineVolume;
+
     }
+
+
 
     public String getBrand() {
         return brand;
@@ -33,9 +37,14 @@ public abstract class  Transport {
     public void setEngineVolume(double engineVolume) {
         this.engineVolume = engineVolume;
     }
+
     public abstract void startDrive();
+
     public abstract void stopDrive();
-    public abstract void  printType();
+
+    public abstract void printType();
+
+    public abstract void diagnostics();
 
     @Override
     public boolean equals(Object o) {

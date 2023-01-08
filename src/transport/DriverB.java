@@ -2,11 +2,11 @@ package transport;
 
 public class DriverB extends Driver<Car> {
 
-    public DriverB(String fullName, boolean drivingLicenses, int experience) {
-        super(fullName, drivingLicenses, experience);
+
+
+    public DriverB(String fullName, boolean drivingLicenses, int experience, String categoryOfRights) {
+        super(fullName, drivingLicenses, experience, categoryOfRights);
     }
-
-
 
     @Override
     public String toString() {
@@ -25,7 +25,7 @@ public class DriverB extends Driver<Car> {
 
     @Override
         public void startGo(Car transport) {
-            System.out.println("Водитель "+ getFullName() + " категории В начал движение и будет участвовать в заезде");
+            System.out.println("Водитель "+ getFullName() + " Категория прав " + getCategoryOfRights() + " начал движение и будет участвовать в заезде");
         }
 
         @Override
@@ -37,4 +37,5 @@ public class DriverB extends Driver<Car> {
         public void fillTheCar () {
             System.out.println("Водитель категории B заправляет автомобиль");
         }
+
     }

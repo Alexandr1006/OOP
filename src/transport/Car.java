@@ -11,16 +11,13 @@ public class Car extends Transport implements Competing {
         this.bodyType = bodyType;
     }
 
+
     public BodyType getBodyType() {
         return bodyType;
     }
 
     public void setBodyType(BodyType bodyType) {
         this.bodyType = bodyType;
-    }
-
-    public Car(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
     }
 
     @Override
@@ -50,13 +47,13 @@ public class Car extends Transport implements Competing {
         System.out.println("Максимальная скорость автомобиля: ");
     }
 
-//    @Override
-//    public String toString() {
-//        return "Car{" +
-//                "bodyType=" + bodyType +
-//                '}';
-//    }
+    @Override
+    public void diagnostics() {
+
+    }
 }
+
+
 
 
 

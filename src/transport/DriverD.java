@@ -1,8 +1,9 @@
 package transport;
 
 public class DriverD extends Driver<Truck> {
-    public DriverD(String fullName, boolean drivingLicenses, int experience) {
-        super(fullName, drivingLicenses, experience);
+
+    public DriverD(String fullName, boolean drivingLicenses, int experience, String categoryOfRights) {
+        super(fullName, drivingLicenses, experience, categoryOfRights);
     }
 
     @Override
@@ -28,7 +29,7 @@ public class DriverD extends Driver<Truck> {
 
     @Override
     public void startGo(Truck Transport) {
-        System.out.println("Водитель "+ getFullName() + " категории D начал движение и будет участвовать в заезде");
+        System.out.println("Водитель "+ getFullName() + " категории" + getCategoryOfRights() + "начал движение и будет участвовать в заезде");
     }
 
     @Override

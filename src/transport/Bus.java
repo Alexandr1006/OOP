@@ -17,9 +17,6 @@ public class Bus extends Transport implements Competing {
         this.capacity = capacity;
     }
 
-    public Bus(String brand, String model, double engineVolume) {
-        super(brand, model, engineVolume);
-    }
 
     @Override
     public void startDrive() {
@@ -49,5 +46,8 @@ public class Bus extends Transport implements Competing {
         System.out.println("Максимальная скорость автобуса: ");
     }
 
-
+    @Override
+    public void diagnostics() {
+        System.out.println("Автобусы не проходят диагностику");
+    }
 }
